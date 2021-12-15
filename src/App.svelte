@@ -1,7 +1,1 @@
-<script>
-  import Notes from "./Notes";
-</script>
-
-<div class="p-5">
-  <Notes />
-</div>
+<div class="p-5">hello world</div>
