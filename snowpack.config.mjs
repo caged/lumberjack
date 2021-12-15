@@ -6,11 +6,15 @@ export default {
   mount: {
     src: "/dist",
     public: "/",
+    // src: { url: "/dist" },
+    // public: { url: "/", static: true },
     /* ... */
   },
   plugins: [
     "@snowpack/plugin-postcss",
     "@snowpack/plugin-svelte",
+    "@snowpack/plugin-typescript",
+
     /* ... */
   ],
   routes: [
