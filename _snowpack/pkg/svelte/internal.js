@@ -36,6 +36,10 @@ function text(data) {
 function space() {
   return text(" ");
 }
+function listen(node, event, handler, options) {
+  node.addEventListener(event, handler, options);
+  return () => node.removeEventListener(event, handler, options);
+}
 function attr(node, attribute, value) {
   if (value == null)
     node.removeAttribute(attribute);
@@ -56,6 +60,9 @@ function set_data(text2, data) {
   data = "" + data;
   if (text2.wholeText !== data)
     text2.data = data;
+}
+function toggle_class(element2, name, toggle) {
+  element2.classList[toggle ? "add" : "remove"](name);
 }
 let current_component;
 function set_current_component(component) {
@@ -253,4 +260,4 @@ class SvelteComponent {
   }
 }
 
-export { SvelteComponent, append, attr, create_component, destroy_component, detach, element, init, insert, mount_component, noop, safe_not_equal, set_custom_element_data, set_data, space, text, transition_in, transition_out };
+export { SvelteComponent, append, attr, create_component, destroy_component, detach, element, init, insert, listen, mount_component, noop, run_all, safe_not_equal, set_custom_element_data, set_data, space, text, toggle_class, transition_in, transition_out };
