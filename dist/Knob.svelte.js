@@ -15,6 +15,7 @@ import {
 	set_custom_element_data,
 	set_data,
 	space,
+	svg_element,
 	text,
 	toggle_class
 } from "../_snowpack/pkg/svelte/internal.js";
@@ -29,6 +30,10 @@ function create_fragment(ctx) {
 	let t2;
 	let t3;
 	let input_knob;
+	let svg;
+	let circle0;
+	let circle1;
+	let rect;
 	let mounted;
 	let dispose;
 
@@ -37,21 +42,48 @@ function create_fragment(ctx) {
 			div1 = element("div");
 			div0 = element("div");
 			span0 = element("span");
-			t0 = text(/*label*/ ctx[1]);
+			t0 = text(/*label*/ ctx[4]);
 			t1 = space();
 			span1 = element("span");
 			t2 = text(/*value*/ ctx[0]);
 			t3 = space();
 			input_knob = element("input-knob");
-			input_knob.innerHTML = `<svg viewBox="0 0 100 100" class="w-full h-full text-white text-opacity-50"><circle cx="50%" cy="50%" r="40" stroke="currentColor" stroke-width="9" stroke-dasharray="3 6" fill="none"></circle><circle class="stroke-black" cx="50%" cy="50%" r="44" stroke="currentColor" stroke-width="6" fill="none"></circle><rect x="48" y="6" width="4" height="20" fill="white"></rect></svg>`;
+			svg = svg_element("svg");
+			circle0 = svg_element("circle");
+			circle1 = svg_element("circle");
+			rect = svg_element("rect");
 			attr(span0, "class", "svelte-1jam2bv");
-			toggle_class(span0, "moving", /*moving*/ ctx[2]);
+			toggle_class(span0, "moving", /*moving*/ ctx[5]);
 			attr(span1, "class", "svelte-1jam2bv");
-			toggle_class(span1, "moving", !/*moving*/ ctx[2]);
+			toggle_class(span1, "moving", !/*moving*/ ctx[5]);
 			attr(div0, "class", "text-center mb-1 text-xs");
-			set_custom_element_data(input_knob, "scale", "100");
-			set_custom_element_data(input_knob, "min", "0");
-			set_custom_element_data(input_knob, "max", "100");
+			attr(circle0, "cx", "50%");
+			attr(circle0, "cy", "50%");
+			attr(circle0, "r", "32");
+			attr(circle0, "stroke", "currentColor");
+			attr(circle0, "stroke-width", "12");
+			attr(circle0, "stroke-dasharray", "3 6");
+			attr(circle0, "fill", "none");
+			attr(circle0, "shape-rendering", "crispEdges");
+			attr(circle1, "class", "stroke-black");
+			attr(circle1, "cx", "50%");
+			attr(circle1, "cy", "50%");
+			attr(circle1, "r", "44");
+			attr(circle1, "stroke", "currentColor");
+			attr(circle1, "stroke-width", "6");
+			attr(circle1, "fill", "none");
+			attr(circle1, "shape-rendering", "crispEdges");
+			attr(rect, "x", "48");
+			attr(rect, "y", "6");
+			attr(rect, "width", "4");
+			attr(rect, "height", "20");
+			attr(rect, "fill", "white");
+			attr(svg, "viewBox", "0 0 100 100");
+			attr(svg, "class", "w-full h-full text-white text-opacity-20");
+			set_custom_element_data(input_knob, "scale", /*scale*/ ctx[3]);
+			set_custom_element_data(input_knob, "min", /*min*/ ctx[1]);
+			set_custom_element_data(input_knob, "max", /*max*/ ctx[2]);
+			set_custom_element_data(input_knob, "value", /*value*/ ctx[0]);
 			set_custom_element_data(input_knob, "class", "svelte-1jam2bv");
 			attr(div1, "class", "inline-block");
 		},
@@ -65,28 +97,48 @@ function create_fragment(ctx) {
 			append(span1, t2);
 			append(div1, t3);
 			append(div1, input_knob);
+			append(input_knob, svg);
+			append(svg, circle0);
+			append(svg, circle1);
+			append(svg, rect);
 
 			if (!mounted) {
 				dispose = [
-					listen(input_knob, "knob-move-start", /*onKnobMoveStart*/ ctx[3]),
-					listen(input_knob, "knob-move-end", /*onKnobMoveEnd*/ ctx[4]),
-					listen(input_knob, "knob-move-change", /*onKnobMoveChange*/ ctx[5])
+					listen(input_knob, "knob-move-start", /*onKnobMoveStart*/ ctx[6]),
+					listen(input_knob, "knob-move-end", /*onKnobMoveEnd*/ ctx[7]),
+					listen(input_knob, "knob-move-change", /*onKnobMoveChange*/ ctx[8])
 				];
 
 				mounted = true;
 			}
 		},
 		p(ctx, [dirty]) {
-			if (dirty & /*label*/ 2) set_data(t0, /*label*/ ctx[1]);
+			if (dirty & /*label*/ 16) set_data(t0, /*label*/ ctx[4]);
 
-			if (dirty & /*moving*/ 4) {
-				toggle_class(span0, "moving", /*moving*/ ctx[2]);
+			if (dirty & /*moving*/ 32) {
+				toggle_class(span0, "moving", /*moving*/ ctx[5]);
 			}
 
 			if (dirty & /*value*/ 1) set_data(t2, /*value*/ ctx[0]);
 
-			if (dirty & /*moving*/ 4) {
-				toggle_class(span1, "moving", !/*moving*/ ctx[2]);
+			if (dirty & /*moving*/ 32) {
+				toggle_class(span1, "moving", !/*moving*/ ctx[5]);
+			}
+
+			if (dirty & /*scale*/ 8) {
+				set_custom_element_data(input_knob, "scale", /*scale*/ ctx[3]);
+			}
+
+			if (dirty & /*min*/ 2) {
+				set_custom_element_data(input_knob, "min", /*min*/ ctx[1]);
+			}
+
+			if (dirty & /*max*/ 4) {
+				set_custom_element_data(input_knob, "max", /*max*/ ctx[2]);
+			}
+
+			if (dirty & /*value*/ 1) {
+				set_custom_element_data(input_knob, "value", /*value*/ ctx[0]);
 			}
 		},
 		i: noop,
@@ -100,39 +152,65 @@ function create_fragment(ctx) {
 }
 
 function instance($$self, $$props, $$invalidate) {
+	let { min = 0 } = $$props;
+	let { max = 100 } = $$props;
+	let { scale = max } = $$props;
 	let { label = "" } = $$props;
 	let { value } = $$props;
 	let { format = value => Math.round(value) } = $$props;
 	let moving = false;
 
 	const onKnobMoveStart = e => {
-		$$invalidate(2, moving = true);
+		$$invalidate(5, moving = true);
 		return true;
 	};
 
 	const onKnobMoveEnd = e => {
-		$$invalidate(2, moving = false);
+		$$invalidate(5, moving = false);
 		return true;
 	};
 
 	const onKnobMoveChange = e => {
 		const target = e.target;
-		if (target) $$invalidate(0, value = format(target.value));
+		const val = target.value;
+		if (target) $$invalidate(0, value = format(val));
 	};
 
 	$$self.$$set = $$props => {
-		if ('label' in $$props) $$invalidate(1, label = $$props.label);
+		if ('min' in $$props) $$invalidate(1, min = $$props.min);
+		if ('max' in $$props) $$invalidate(2, max = $$props.max);
+		if ('scale' in $$props) $$invalidate(3, scale = $$props.scale);
+		if ('label' in $$props) $$invalidate(4, label = $$props.label);
 		if ('value' in $$props) $$invalidate(0, value = $$props.value);
-		if ('format' in $$props) $$invalidate(6, format = $$props.format);
+		if ('format' in $$props) $$invalidate(9, format = $$props.format);
 	};
 
-	return [value, label, moving, onKnobMoveStart, onKnobMoveEnd, onKnobMoveChange, format];
+	return [
+		value,
+		min,
+		max,
+		scale,
+		label,
+		moving,
+		onKnobMoveStart,
+		onKnobMoveEnd,
+		onKnobMoveChange,
+		format
+	];
 }
 
 class Knob extends SvelteComponent {
 	constructor(options) {
 		super();
-		init(this, options, instance, create_fragment, safe_not_equal, { label: 1, value: 0, format: 6 });
+
+		init(this, options, instance, create_fragment, safe_not_equal, {
+			min: 1,
+			max: 2,
+			scale: 3,
+			label: 4,
+			value: 0,
+			format: 9
+		});
 	}
 }
 

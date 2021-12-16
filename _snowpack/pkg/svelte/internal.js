@@ -30,6 +30,9 @@ function detach(node) {
 function element(name) {
   return document.createElement(name);
 }
+function svg_element(name) {
+  return document.createElementNS("http://www.w3.org/2000/svg", name);
+}
 function text(data) {
   return document.createTextNode(data);
 }
@@ -260,4 +263,4 @@ class SvelteComponent {
   }
 }
 
-export { SvelteComponent, append, attr, create_component, destroy_component, detach, element, init, insert, listen, mount_component, noop, run_all, safe_not_equal, set_custom_element_data, set_data, space, text, toggle_class, transition_in, transition_out };
+export { SvelteComponent, append, attr, create_component, destroy_component, detach, element, init, insert, listen, mount_component, noop, run_all, safe_not_equal, set_custom_element_data, set_data, space, svg_element, text, toggle_class, transition_in, transition_out };

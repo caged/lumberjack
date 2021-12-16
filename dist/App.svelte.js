@@ -30,7 +30,10 @@ function create_fragment(ctx) {
 	let knob1;
 	let current;
 	knob0 = new Knob({ props: { value: 12, label: "Pitch" } });
-	knob1 = new Knob({ props: { value: 12, label: "Cent" } });
+
+	knob1 = new Knob({
+			props: { value: 50, max: 50, label: "Cent" }
+		});
 
 	return {
 		c() {
