@@ -28,7 +28,7 @@
 <div class="inline-block">
   <div class="text-center mb-1 text-xs">
     <span class:moving>{label}</span>
-    <span class:moving={!moving}>{value}</span>
+    <span class:moving={!moving} class="text-blue-400">{value}</span>
   </div>
   <input-knob
     {scale}
@@ -39,7 +39,10 @@
     on:knob-move-end={onKnobMoveEnd}
     on:knob-move-change={onKnobMoveChange}
   >
-    <svg viewBox="0 0 100 100" class="w-full h-full text-white text-opacity-20">
+    <svg
+      viewBox="0 0 100 100"
+      class="w-full h-full text-gray-600 text-opacity-50"
+    >
       <circle
         cx="50%"
         cy="50%"
@@ -51,12 +54,12 @@
         shape-rendering="crispEdges"
       />
       <circle
-        class="stroke-black"
+        class="stroke-blue-300"
         cx="50%"
         cy="50%"
         r="44"
         stroke="currentColor"
-        stroke-width="6"
+        stroke-width="3"
         fill="none"
         shape-rendering="crispEdges"
       />
@@ -67,7 +70,7 @@
 
 <style>
   input-knob::part(rotator) {
-    @apply relative box-border border-double border rounded-full bg-gray-700 border-black;
+    @apply relative box-border border-double border-2 rounded-full bg-gray-800 border-blue-700;
   }
 
   .moving {
