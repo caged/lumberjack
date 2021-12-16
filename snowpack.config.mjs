@@ -29,6 +29,7 @@ export default {
     // target: "es2018",
   },
   packageOptions: {
+    knownEntrypoints: ["input-knob"],
     /* ... */
   },
   devOptions: {
