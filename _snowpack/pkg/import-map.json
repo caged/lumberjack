@@ -1,6 +1,0 @@
-{
-  "imports": {
-    "input-knob": "./input-knob.js",
-    "svelte/internal": "./svelte/internal.js"
-  }
-}
