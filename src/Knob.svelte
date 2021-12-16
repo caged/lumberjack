@@ -1,4 +1,7 @@
 <script type="ts">
+  export let min: number = 0;
+  export let max: number = 100;
+  export let scale: number = max;
   export let label: string = "";
   export let value: number;
   export let format: (value: number) => number = (value) => Math.round(value);
@@ -17,7 +20,8 @@
 
   const onKnobMoveChange = (e: Event) => {
     const target = e.target as HTMLInputElement;
-    if (target) value = format(target.value);
+    const val = target.value as unknown as number;
+    if (target) value = format(val);
   };
 </script>
 
@@ -27,22 +31,24 @@
     <span class:moving={!moving}>{value}</span>
   </div>
   <input-knob
-    scale="100"
-    min="0"
-    max="100"
+    {scale}
+    {min}
+    {max}
+    {value}
     on:knob-move-start={onKnobMoveStart}
     on:knob-move-end={onKnobMoveEnd}
     on:knob-move-change={onKnobMoveChange}
   >
-    <svg viewBox="0 0 100 100" class="w-full h-full text-white text-opacity-50">
+    <svg viewBox="0 0 100 100" class="w-full h-full text-white text-opacity-20">
       <circle
         cx="50%"
         cy="50%"
-        r="40"
+        r="32"
         stroke="currentColor"
-        stroke-width="9"
+        stroke-width="12"
         stroke-dasharray="3 6"
         fill="none"
+        shape-rendering="crispEdges"
       />
       <circle
         class="stroke-black"
@@ -52,6 +58,7 @@
         stroke="currentColor"
         stroke-width="6"
         fill="none"
+        shape-rendering="crispEdges"
       />
       <rect x="48" y="6" width="4" height="20" fill="white" />
     </svg>
