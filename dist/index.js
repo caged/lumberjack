@@ -1,2 +1,14 @@
-function u(){}function A(t){return t()}function E(){return Object.create(null)}function a(t){t.forEach(A)}function G(t){return typeof t=="function"}function C(t,e){return t!=t?e==e:t!==e||t&&typeof t=="object"||typeof t=="function"}function H(t){return Object.keys(t).length===0}function O(t,e,n){t.insertBefore(e,n||null)}function m(t){t.parentNode.removeChild(t)}function S(t){return document.createElement(t)}function q(t,e,n){n==null?t.removeAttribute(e):t.getAttribute(e)!==n&&t.setAttribute(e,n)}function I(t){return Array.from(t.childNodes)}var N;function d(t){N=t}var i=[],B=[],_=[],M=[],J=Promise.resolve(),g=!1;function K(){g||(g=!0,J.then(P))}function y(t){_.push(t)}var $=!1,b=new Set;function P(){if(!$){$=!0;do{for(let t=0;t<i.length;t+=1){let e=i[t];d(e),L(e.$$)}for(d(null),i.length=0;B.length;)B.pop()();for(let t=0;t<_.length;t+=1){let e=_[t];b.has(e)||(b.add(e),e())}_.length=0}while(i.length);for(;M.length;)M.pop()();g=!1,$=!1,b.clear()}}function L(t){if(t.fragment!==null){t.update(),a(t.before_update);let e=t.dirty;t.dirty=[-1],t.fragment&&t.fragment.p(t.ctx,e),t.after_update.forEach(y)}}var Q=new Set;function R(t,e){t&&t.i&&(Q.delete(t),t.i(e))}function T(t,e,n,o){let{fragment:c,on_mount:h,on_destroy:s,after_update:p}=t.$$;c&&c.m(e,n),o||y(()=>{let f=h.map(A).filter(G);s?s.push(...f):a(f),t.$$.on_mount=[]}),p.forEach(y)}function U(t,e){let n=t.$$;n.fragment!==null&&(a(n.on_destroy),n.fragment&&n.fragment.d(e),n.on_destroy=n.fragment=null,n.ctx=[])}function V(t,e){t.$$.dirty[0]===-1&&(i.push(t),K(),t.$$.dirty.fill(0)),t.$$.dirty[e/31|0]|=1<<e%31}function z(t,e,n,o,c,h,s,p=[-1]){let f=N;d(t);let r=t.$$={fragment:null,ctx:null,props:h,update:u,not_equal:c,bound:E(),on_mount:[],on_destroy:[],on_disconnect:[],before_update:[],after_update:[],context:new Map(e.context||(f?f.$$.context:[])),callbacks:E(),dirty:p,skip_bound:!1,root:e.target||f.$$.root};s&&s(r.root);let k=!1;if(r.ctx=n?n(t,e.props||{},(l,w,...v)=>{let j=v.length?v[0]:w;return r.ctx&&c(r.ctx[l],r.ctx[l]=j)&&(!r.skip_bound&&r.bound[l]&&r.bound[l](j),k&&V(t,l)),w}):[],r.update(),k=!0,a(r.before_update),r.fragment=o?o(r.ctx):!1,e.target){if(e.hydrate){let l=I(e.target);r.fragment&&r.fragment.l(l),l.forEach(m)}else r.fragment&&r.fragment.c();e.intro&&R(t.$$.fragment),T(t,e.target,e.anchor,e.customElement),P()}d(f)}var x=class{$destroy(){U(this,1),this.$destroy=u}$on(e,n){let o=this.$$.callbacks[e]||(this.$$.callbacks[e]=[]);return o.push(n),()=>{let c=o.indexOf(n);c!==-1&&o.splice(c,1)}}$set(e){this.$$set&&!H(e)&&(this.$$.skip_bound=!0,this.$$set(e),this.$$.skip_bound=!1)}};function W(t){let e;return{c(){e=S("div"),e.textContent="hello world",q(e,"class","p-5")},m(n,o){O(n,e,o)},p:u,i:u,o:u,d(n){n&&m(e)}}}var D=class extends x{constructor(e){super();z(this,e,null,W,C,{})}},F=D;var X=new F({target:document.body}),Y=X;export{Y as default};
-//# sourceMappingURL=index.js.map
+import * as __SNOWPACK_ENV__ from '../_snowpack/env.js';
+import.meta.env = __SNOWPACK_ENV__;
+
+import App from "./App.svelte.js";
+let app = new App({
+  target: document.body
+});
+export default app;
+if (undefined /* [snowpack] import.meta.hot */ ) {
+  undefined /* [snowpack] import.meta.hot */ .accept();
+  undefined /* [snowpack] import.meta.hot */ .dispose(() => {
+    app.$destroy();
+  });
+}
