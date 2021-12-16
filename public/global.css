@@ -5,3 +5,15 @@
 body {
   @apply bg-gray-900 text-gray-100;
 }
+
+input-knob {
+  @apply w-10 h-10 block;
+}
+
+input-knob::part(rotator) {
+  @apply w-10 h-10 relative box-border border-double bg-gray-700 border-gray-800 border-2 rounded-full  shadow-gray-500 outline outline-gray-600;
+}
+
+.mark {
+  @apply w-full text-lg text-center text-gray-400 -my-2;
+}

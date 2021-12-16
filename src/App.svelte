@@ -1,5 +1,12 @@
 <script lang="ts">
-  console.log("omgz");
+  import Knob from "./Knob.svelte";
 </script>
 
-<div class="p-2">hello worldz</div>
+<div>
+  hey
+
+  <Knob value={12} label="foo" />
+</div>
+
+<style>
+</style>
