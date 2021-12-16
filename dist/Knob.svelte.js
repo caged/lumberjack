@@ -52,9 +52,9 @@ function create_fragment(ctx) {
 			circle0 = svg_element("circle");
 			circle1 = svg_element("circle");
 			rect = svg_element("rect");
-			attr(span0, "class", "svelte-1jam2bv");
+			attr(span0, "class", "svelte-124h628");
 			toggle_class(span0, "moving", /*moving*/ ctx[5]);
-			attr(span1, "class", "svelte-1jam2bv");
+			attr(span1, "class", "text-blue-400 svelte-124h628");
 			toggle_class(span1, "moving", !/*moving*/ ctx[5]);
 			attr(div0, "class", "text-center mb-1 text-xs");
 			attr(circle0, "cx", "50%");
@@ -65,12 +65,12 @@ function create_fragment(ctx) {
 			attr(circle0, "stroke-dasharray", "3 6");
 			attr(circle0, "fill", "none");
 			attr(circle0, "shape-rendering", "crispEdges");
-			attr(circle1, "class", "stroke-black");
+			attr(circle1, "class", "stroke-blue-300");
 			attr(circle1, "cx", "50%");
 			attr(circle1, "cy", "50%");
 			attr(circle1, "r", "44");
 			attr(circle1, "stroke", "currentColor");
-			attr(circle1, "stroke-width", "6");
+			attr(circle1, "stroke-width", "3");
 			attr(circle1, "fill", "none");
 			attr(circle1, "shape-rendering", "crispEdges");
 			attr(rect, "x", "48");
@@ -79,12 +79,12 @@ function create_fragment(ctx) {
 			attr(rect, "height", "20");
 			attr(rect, "fill", "white");
 			attr(svg, "viewBox", "0 0 100 100");
-			attr(svg, "class", "w-full h-full text-white text-opacity-20");
+			attr(svg, "class", "w-full h-full text-gray-600 text-opacity-50");
 			set_custom_element_data(input_knob, "scale", /*scale*/ ctx[3]);
 			set_custom_element_data(input_knob, "min", /*min*/ ctx[1]);
 			set_custom_element_data(input_knob, "max", /*max*/ ctx[2]);
 			set_custom_element_data(input_knob, "value", /*value*/ ctx[0]);
-			set_custom_element_data(input_knob, "class", "svelte-1jam2bv");
+			set_custom_element_data(input_knob, "class", "svelte-124h628");
 			attr(div1, "class", "inline-block");
 		},
 		m(target, anchor) {

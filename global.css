@@ -411,18 +411,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 .rounded-full {
   border-radius: 9999px;
 }
-.border {
-  border-width: 1px;
+.border-2 {
+  border-width: 2px;
 }
 .border-double {
   border-style: double;
 }
-.bg-gray-700 {
+.bg-gray-800 {
   --tw-bg-opacity: 1;
-  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
 }
-.stroke-black {
-  stroke: #000;
+.stroke-blue-300 {
+  stroke: #93c5fd;
 }
 .p-5 {
   padding: 1.25rem;
@@ -434,12 +434,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-size: 0.75rem;
   line-height: 1rem;
 }
-.text-white {
+.text-blue-400 {
   --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+  color: rgb(96 165 250 / var(--tw-text-opacity));
 }
-.text-opacity-20 {
-  --tw-text-opacity: 0.2;
+.text-gray-600 {
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity));
+}
+.text-opacity-50 {
+  --tw-text-opacity: 0.5;
 }
 
 body {

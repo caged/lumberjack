@@ -32,7 +32,7 @@ function create_fragment(ctx) {
 	knob0 = new Knob({ props: { value: 12, label: "Pitch" } });
 
 	knob1 = new Knob({
-			props: { value: 50, max: 50, label: "Cent" }
+			props: { value: 25, max: 50, label: "Cent" }
 		});
 
 	return {
